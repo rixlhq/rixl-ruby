@@ -6,16 +6,16 @@ The RIXL Ruby SDK provides a simple and expressive way to interact with the RIXL
 
 The SDK is split into service-specific gems:
 
-- **rixl-sdk-ruby-feeds**: Access and manage feeds.
-- **rixl-sdk-ruby-videos**: Video lifecycle and processing management.
-- **rixl-sdk-ruby-images**: Image management and transformations.
+- **rixl-ruby-feeds**: Access and manage feeds.
+- **rixl-ruby-videos**: Video lifecycle and processing management.
+- **rixl-ruby-images**: Image management and transformations.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rixl-sdk-ruby-videos'
+gem 'rixl-ruby-videos'
 ```
 
 And then execute:

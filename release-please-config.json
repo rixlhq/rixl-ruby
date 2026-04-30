@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please-action/v4/schema.json",
+    "bump-minor-pre-major": false,
+    "bump-patch-for-minor-pre-major": true,
+    "packages": {
+        "sdk": {
+            "release-type": "ruby",
+            "package-name": "rixl-ruby",
+            "version-file": "lib/rixl_sdk/version.rb"
+        }
+    }
+}

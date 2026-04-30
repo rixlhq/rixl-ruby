@@ -1,0 +1,1 @@
+require_relative 'thumbnail_put_request_body'
