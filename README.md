@@ -1,38 +1,29 @@
-# RIXL Ruby SDK
+# rixl-ruby
 
-The RIXL Ruby SDK provides a simple and expressive way to interact with the RIXL API. Built for productivity and ease of use.
+Ruby client for the [RIXL](https://rixl.com) API.
 
-## Gems
-
-The SDK is split into service-specific gems:
-
-- **rixl-ruby-feeds**: Access and manage feeds.
-- **rixl-ruby-videos**: Video lifecycle and processing management.
-- **rixl-ruby-images**: Image management and transformations.
-
-## Installation
-
-Add this line to your application's Gemfile:
+## Install
 
 ```ruby
-gem 'rixl-ruby-videos'
+gem "rixl-ruby"
 ```
-
-And then execute:
 
 ```bash
 bundle install
 ```
 
-## Usage
+Requires Ruby 3.0+.
+
+## Quick start
 
 ```ruby
-require 'rixl_videos_sdk'
+require "rixl_sdk"
 
-api = RixlVideosSdk::VideosApi.new
-# api.get_video(...)
+client = RixlSdk::RixlClient.new(adapter)
+image = client.images.by_image_id("PS5IMKoFLm").get
+puts image.id
 ```
 
-## Documentation
+## Issues
 
-Full documentation is available at [docs.rixl.com](https://docs.rixl.com).
+[github.com/rixlhq/rixl-ruby/issues](https://github.com/rixlhq/rixl-ruby/issues)
