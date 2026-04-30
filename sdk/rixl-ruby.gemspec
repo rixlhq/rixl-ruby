@@ -1,8 +1,8 @@
 Gem::Specification.new do |spec|
   spec.name          = "rixl-ruby"
   spec.version       = "0.0.0"
-  spec.summary       = "Kiota-generated Ruby SDK for RIXL."
-  spec.description   = "Kiota-generated Ruby SDK for RIXL."
+  spec.summary       = "Ruby client for the RIXL API."
+  spec.description   = "Ruby client for the RIXL API."
   spec.authors       = ["RIXL"]
   spec.email         = ["support@rixl.com"]
   spec.files         = Dir.glob("{*.rb,feeds/**/*.rb,images/**/*.rb,videos/**/*.rb,models/**/*.rb}")
