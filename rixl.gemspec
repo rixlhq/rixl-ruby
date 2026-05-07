@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.name          = "rixl-ruby"
+  spec.name          = "rixl"
   spec.version       = "0.0.0"
   spec.summary       = "Ruby client for the RIXL API."
   spec.description   = "Typed Ruby client for the RIXL API — manage images, videos, and feeds."
