@@ -1,19 +1,19 @@
-# rixl-ruby
+# Rixl
 
 Ruby client for the [RIXL](https://rixl.com) API.
 
-[![Gem Version](https://img.shields.io/gem/v/rixl-ruby.svg)](https://rubygems.org/gems/rixl-ruby)
+[![Gem Version](https://img.shields.io/gem/v/rixl.svg)](https://rubygems.org/gems/rixl)
 
 ## Install
 
 ```bash
-gem install rixl-ruby
+gem install rixl
 ```
 
 Or in a `Gemfile`:
 
 ```ruby
-gem "rixl-ruby"
+gem "rixl"
 ```
 
 Requires Ruby 3.0+. The Kiota Ruby runtime (`microsoft_kiota_abstractions`, `microsoft_kiota_faraday`, `microsoft_kiota_serialization_json`) is pulled in transitively.
