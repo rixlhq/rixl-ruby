@@ -5,8 +5,8 @@ Gem::Specification.new do |spec|
   spec.description   = "Ruby client for the RIXL API."
   spec.authors       = ["RIXL"]
   spec.email         = ["support@rixl.com"]
-  spec.files         = Dir.glob("{*.rb,feeds/**/*.rb,images/**/*.rb,videos/**/*.rb,models/**/*.rb}")
-  spec.require_paths = ["."]
+  spec.files         = Dir.glob("sdk/{*.rb,feeds/**/*.rb,images/**/*.rb,videos/**/*.rb,models/**/*.rb}")
+  spec.require_paths = ["sdk"]
 
   spec.add_runtime_dependency "microsoft_kiota_abstractions", "0.14.4"
   spec.add_runtime_dependency "microsoft_kiota_faraday", "0.15.0"

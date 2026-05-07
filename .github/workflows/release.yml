@@ -47,7 +47,6 @@ jobs:
           ruby-version: "3.2"
 
       - name: Build & push gem
-        working-directory: sdk
         run: |
           gem build *.gemspec
           gem push *.gem
