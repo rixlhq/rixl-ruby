@@ -26,7 +26,7 @@ module RixlSdk
                     end
                     ## 
                     ## Mark a video upload as complete after successful upload to storage using API key authentication
-                    ## @param body The request body
+                    ## @param body Video upload completion request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of video
                     ## 
@@ -45,7 +45,7 @@ module RixlSdk
                     end
                     ## 
                     ## Mark a video upload as complete after successful upload to storage using API key authentication
-                    ## @param body The request body
+                    ## @param body Video upload completion request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

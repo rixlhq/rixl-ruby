@@ -26,7 +26,7 @@ module RixlSdk
                     end
                     ## 
                     ## Initialize a presigned URL upload for an image file using API key authentication
-                    ## @param body The request body
+                    ## @param body Upload initialization request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of internal_images_handler_init_response
                     ## 
@@ -44,7 +44,7 @@ module RixlSdk
                     end
                     ## 
                     ## Initialize a presigned URL upload for an image file using API key authentication
-                    ## @param body The request body
+                    ## @param body Upload initialization request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

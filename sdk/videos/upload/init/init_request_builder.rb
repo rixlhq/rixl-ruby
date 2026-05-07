@@ -26,7 +26,7 @@ module RixlSdk
                     end
                     ## 
                     ## Initialize a video upload and get presigned URLs for video and poster using API key authentication
-                    ## @param body The request body
+                    ## @param body Video upload initialization request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of github_com_rixlhq_api_internal_videos_handler_upload_init_response
                     ## 
@@ -44,7 +44,7 @@ module RixlSdk
                     end
                     ## 
                     ## Initialize a video upload and get presigned URLs for video and poster using API key authentication
-                    ## @param body The request body
+                    ## @param body Video upload initialization request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

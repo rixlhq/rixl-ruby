@@ -42,7 +42,7 @@ module RixlSdk
                     end
                     ## 
                     ## Replace all chapters for a video (atomic PUT operation) using API key authentication
-                    ## @param body The request body
+                    ## @param body Chapters array
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of update_chapters_response
                     ## 
@@ -78,7 +78,7 @@ module RixlSdk
                     end
                     ## 
                     ## Replace all chapters for a video (atomic PUT operation) using API key authentication
-                    ## @param body The request body
+                    ## @param body Chapters array
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

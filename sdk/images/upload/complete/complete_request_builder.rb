@@ -26,7 +26,7 @@ module RixlSdk
                     end
                     ## 
                     ## Complete the upload process and create the image record using API key authentication
-                    ## @param body The request body
+                    ## @param body Upload completion request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of image
                     ## 
@@ -45,7 +45,7 @@ module RixlSdk
                     end
                     ## 
                     ## Complete the upload process and create the image record using API key authentication
-                    ## @param body The request body
+                    ## @param body Upload completion request
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

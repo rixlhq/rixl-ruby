@@ -24,7 +24,7 @@ module RixlSdk
                         super(path_parameters, request_adapter, "{+baseurl}/videos/{videoId}/thumbnail")
                     end
                     ## 
-                    ## Update the thumbnail image for an existing video
+                    ## Update the thumbnail image for an existing video using API key authentication
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of video
@@ -43,7 +43,7 @@ module RixlSdk
                         return @request_adapter.send_async(request_info, lambda {|pn| RixlSdk::Models::Video.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the thumbnail image for an existing video
+                    ## Update the thumbnail image for an existing video using API key authentication
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -55,7 +55,7 @@ module RixlSdk
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(@request_adapter, 'application/x-www-form-urlencoded', body)
+                        request_info.set_content_from_parsable(@request_adapter, 'multipart/form-data', body)
                         request_info.url_template = @url_template
                         request_info.path_parameters = @path_parameters
                         request_info.http_method = :PUT

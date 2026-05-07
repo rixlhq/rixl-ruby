@@ -1,9 +1,11 @@
 require 'microsoft_kiota_abstractions'
+require_relative '../../../models/subtitle'
 require_relative '../../../models/subtitle_delete'
 require_relative '../../../rixl_sdk'
 require_relative '../../videos'
 require_relative '../item'
-require_relative './item/with_lang_code_item_request_builder'
+require_relative './item/with_subtitle_item_request_builder'
+require_relative './language/language_request_builder'
 require_relative './subtitles'
 
 module RixlSdk
@@ -15,15 +17,20 @@ module RixlSdk
                 class SubtitlesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
-                    ## Gets an item from the RixlSdk.videos.item.subtitles.item collection
-                    ## @param lang_code Language Code (BCP 47)
-                    ## @return a with_lang_code_item_request_builder
+                    # The language property
+                    def language()
+                        return RixlSdk::Videos::Item::Subtitles::Language::LanguageRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
-                    def by_lang_code(lang_code)
-                        raise StandardError, 'lang_code cannot be null' if lang_code.nil?
+                    ## Gets an item from the RixlSdk.videos.item.subtitles.item collection
+                    ## @param subtitle_id Subtitle ID
+                    ## @return a with_subtitle_item_request_builder
+                    ## 
+                    def by_subtitle_id(subtitle_id)
+                        raise StandardError, 'subtitle_id cannot be null' if subtitle_id.nil?
                         url_tpl_params = @path_parameters.clone
-                        url_tpl_params["lang_code"] = lang_code
-                        return RixlSdk::Videos::Item::Subtitles::Item::WithLangCodeItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        url_tpl_params["subtitleId"] = subtitle_id
+                        return RixlSdk::Videos::Item::Subtitles::Item::WithSubtitleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new SubtitlesRequestBuilder and sets the default values.
@@ -46,6 +53,19 @@ module RixlSdk
                         return @request_adapter.send_async(request_info, lambda {|pn| RixlSdk::Models::SubtitleDelete.create_from_discriminator_value(pn) }, nil)
                     end
                     ## 
+                    ## Replace all subtitles with the provided ones using API key authentication
+                    ## @param body The request body
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a Fiber of subtitle
+                    ## 
+                    def post(body, request_configuration=nil)
+                        raise StandardError, 'body cannot be null' if body.nil?
+                        request_info = self.to_post_request_information(
+                            body, request_configuration
+                        )
+                        return @request_adapter.send_async(request_info, lambda {|pn| RixlSdk::Models::Subtitle.create_from_discriminator_value(pn) }, nil)
+                    end
+                    ## 
                     ## Remove all subtitles from a video using API key authentication
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -59,6 +79,26 @@ module RixlSdk
                         request_info.url_template = @url_template
                         request_info.path_parameters = @path_parameters
                         request_info.http_method = :DELETE
+                        request_info.headers.try_add('Accept', 'application/json')
+                        return request_info
+                    end
+                    ## 
+                    ## Replace all subtitles with the provided ones using API key authentication
+                    ## @param body The request body
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a request_information
+                    ## 
+                    def to_post_request_information(body, request_configuration=nil)
+                        raise StandardError, 'body cannot be null' if body.nil?
+                        request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                        unless request_configuration.nil?
+                            request_info.add_headers_from_raw_object(request_configuration.headers)
+                            request_info.add_request_options(request_configuration.options)
+                        end
+                        request_info.set_content_from_parsable(@request_adapter, 'multipart/form-data', body)
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :POST
                         request_info.headers.try_add('Accept', 'application/json')
                         return request_info
                     end
