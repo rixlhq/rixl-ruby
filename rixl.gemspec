@@ -35,5 +35,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "microsoft_kiota_abstractions", "0.14.4"
   spec.add_dependency "microsoft_kiota_faraday", "0.15.0"
-  spec.add_dependency "microsoft_kiota_serialization_json", "0.9.1"
+  spec.add_dependency "microsoft_kiota_serialization_json", "0.9.2"
 end
