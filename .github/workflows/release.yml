@@ -7,6 +7,9 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+  contents: write # IMPORTANT: this permission is required for `rake release` to push the release tag
+
 
 jobs:
   release-please:
