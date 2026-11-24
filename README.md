@@ -1,6 +1,6 @@
 # Rixl
 
-Ruby client for the [RIXL](https://rixl.com) API.
+Ruby client for the [Rixl](https://rixl.com) API.
 
 [![Gem Version](https://img.shields.io/gem/v/rixl.svg)](https://rubygems.org/gems/rixl)
 
