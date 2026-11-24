@@ -3,11 +3,11 @@
 Gem::Specification.new do |spec|
   spec.name = "rixl"
   spec.version = "0.1.0"
-  spec.authors = ["RIXL"]
-  spec.email = ["support@rixl"]
+  spec.authors = ["Rixl Inc."]
+  spec.email = ["support@rixl.com"]
 
-  spec.summary = "Ruby client for the RIXL API."
-  spec.description = "Typed Ruby client for the RIXL API — manage images, videos, and feeds."
+  spec.summary = "Ruby client for the Rixl API."
+  spec.description = "Typed Ruby client for the Rixl API — manage images, videos, and feeds."
   spec.homepage = "https://github.com/rixlhq/rixl-ruby"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
